@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NER Results</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>NER Results</h1>
+        <p>Input Text: <strong>{{ text }}</strong></p>
+        <h2>Predictions:</h2>
+        {% for sentence in predictions %}
+            <ul>
+            {% for entity in sentence %}
+                <li>{{ entity['entity'] }}: {{ entity['word'] }}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+        <a href="/">Try another sentence</a>
+    </div>
+</body>
+</html>
